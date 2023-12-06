@@ -1,0 +1,29 @@
+<div class="author">
+  <h1 class="author_heading">Melon</h1>
+  <p class="author_body">Building a Blog Site</p>
+</div>
+
+<img
+  src="/images/hero-image.webp"
+  alt=""
+  class="hero-image"
+  width="981"
+  height="528"
+/>
+
+<section class="article">
+  <h2 class="article_heading">Latest Posts</h2>
+  <ul class="article-ul">
+    <% data.forEach(blogs=> { %>
+
+    <li>
+      <a href="posts/<%= blogs.id %>">
+        <span> <%= blogs.title %> </span>
+        <span class="article-list-date">
+          <%= blogs.createdAt.toDateString() %>
+        </span>
+      </a>
+    </li>
+    <% }) %>
+  </ul>
+</section>
